@@ -12,7 +12,16 @@ const urls: string[] = [
   'http://localhost:3000/transactions.json',
   'http://localhost:3000/accounts.json',
   'http://localhost:3000/desks.json',
-  'http://localhost:3000/instruments.json'];
+  'http://localhost:3000/instruments.json'
+
+   /*
+  'https://zdubin.github.io/transaction-summary/transactions.json',
+  'https://zdubin.github.io/transaction-summary/accounts.json',
+  'https://zdubin.github.io/transaction-summary/desks.json',
+  'https://zdubin.github.io/transaction-summary/instruments.json'
+    */
+  ]
+  ;
 
 const PositionSummary: React.FC = () => {
 
@@ -77,6 +86,11 @@ const PositionSummary: React.FC = () => {
 
   return (
       <div className='position_summary'>
+        <div className='position_summary__items'>
+          <div>
+            Please click on the <strong>down arrow</strong> next to the Symbol, to expand the position into individual transactions
+          </div>
+        </div>
         {isLoading ? 
           <div className="position_summary__progress_container">
                 <LinearProgress className="position_summary__loading" />
