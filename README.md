@@ -1,5 +1,5 @@
 #  This project creates an outer symbol/quantity table, with an accordian inner transaction table per symbol
-#  It follows the ti-react-interview.pdf mockup as closely as possible using standard components from the Material framework.
+#  It uses standard components from the Material framework.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
