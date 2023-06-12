@@ -8,6 +8,10 @@ interface Props {
   transactions: Transaction[];
 }
 
+const tableCellProperties = { border: '1px solid black' };
+const tableHeaderProperties = {...tableCellProperties, fontWeight: 'bold' };
+
+
 // purley presentational component to display inner transactions table for a symbol
 export const PositionDetail: React.FC<Props> = ({ transactions }) => {
   return (
@@ -16,10 +20,10 @@ export const PositionDetail: React.FC<Props> = ({ transactions }) => {
       <Table sx={{ minWidth: 650, border: '1px solid black', backgroundColor: 'white' }} aria-label="simple table">
         <TableHead>
           <TableRow>
-            <TableCell align="left" width="25%"  sx={{ fontWeight: 'bold', border: '1px solid black' }}>Desk Name</TableCell>
-            <TableCell align="left" width="25%"  sx={{ fontWeight: 'bold', border: '1px solid black' }}>Account</TableCell>
-            <TableCell align="left" width="25%"  sx={{ fontWeight: 'bold', border: '1px solid black' }}>Quantity</TableCell>
-            <TableCell align="left" width="25%"  sx={{ fontWeight: 'bold', border: '1px solid black' }}>Price</TableCell>
+            <TableCell align="left" width="25%"  sx={tableHeaderProperties}>Desk Name</TableCell>
+            <TableCell align="left" width="25%"  sx={tableHeaderProperties}>Account</TableCell>
+            <TableCell align="left" width="25%"  sx={tableHeaderProperties}>Quantity</TableCell>
+            <TableCell align="left" width="25%"  sx={tableHeaderProperties}>Price</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -27,10 +31,10 @@ export const PositionDetail: React.FC<Props> = ({ transactions }) => {
             <TableRow
               key={`transaction-${i}`}
             >
-              <TableCell width="25%" align="left" sx={{ border: '1px solid black' }}>{desk_name}</TableCell>
-              <TableCell width="25%" align="left" sx={{ border: '1px solid black' }}>{account}</TableCell>
-              <TableCell width="25%" align="right" sx={{ border: '1px solid black' }}>{quantity}</TableCell>
-              <TableCell width="25%" align="right" sx={{ border: '1px solid black' }}>{price}</TableCell>
+              <TableCell width="25%" align="left" sx={tableCellProperties}>{desk_name}</TableCell>
+              <TableCell width="25%" align="left" sx={tableCellProperties}>{account}</TableCell>
+              <TableCell width="25%" align="right" sx={tableCellProperties}>{quantity}</TableCell>
+              <TableCell width="25%" align="right" sx={tableCellProperties}>{price}</TableCell>
             </TableRow>
           ))}
         </TableBody>
